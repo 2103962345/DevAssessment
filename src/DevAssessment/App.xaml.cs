@@ -1,6 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using DevAssessment.Views;
 
 namespace DevAssessment
 {
