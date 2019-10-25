@@ -1,14 +1,20 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using DevAssessment.Auth;
+using DevAssessment.Auth.ViewModels;
+using DevAssessment.Auth.Views;
+using DevAssessment.ViewModel;
 using DevAssessment.Views;
 using Prism;
+using Prism.DryIoc;
 using Prism.Ioc;
-using DevAssessment.ViewModels;
+using Prism.Logging;
+using Prism.Modularity;
+using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
 
 namespace DevAssessment
 {
-
-    //Updated the App.xaml.cs file to use Prism
 
     public partial class App
     {
@@ -21,13 +27,42 @@ namespace DevAssessment
 
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("MainPage");
+            await NavigationService.NavigateAsync("LoginPage");
 
-       }
+        }
+
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
         }
+
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<AuthenticationModule>();
+        }
+
+        //public App()
+        //{
+        //    InitializeComponent();
+
+        //    MainPage = new LoginPage();
+        //}
+
+        //protected override void OnStart()
+        //{
+        //    // Handle when your app starts
+        //}
+
+        //protected override void OnSleep()
+        //{
+        //    // Handle when your app sleeps
+        //}
+
+        //protected override void OnResume()
+        //{
+        //    // Handle when your app resumes
+        //}
     }
 }

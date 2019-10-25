@@ -4,17 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="DevAssessment.Views.MainPage">
-
-  <StackLayout 
-            CompressedLayout.IsHeadless="True"
-            HorizontalOptions="Center"
-            VerticalOptions="CenterAndExpand">
-    
-    <!-- Place new controls here -->
-    <Label Text="Welcome to Xamarin.Forms!" /> 
-  </StackLayout>
-
+             x:Class="DevAssessment.Views.HomePage">
+    <ContentPage.Content>
+    <StackLayout>
+      <Label Text="{Binding Name, StringFormat='Welcome {0}'}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>
