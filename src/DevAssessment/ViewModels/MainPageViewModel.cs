@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using DevAssessment.Auth;
+using Prism.Events;
+using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,4 +16,6 @@ namespace DevAssessment.ViewModels
 
         }
     }
+    
 }
+

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             mc:Ignorable="d"
+             x:Class="DevAssessment.Auth.Views.LoginPage">
+  <ContentPage.Content>
+
+    <StackLayout Padding="20" 
+                 CompressedLayout.IsHeadless="True" 
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="FillAndExpand">
+
+      <Entry Placeholder="Please enter your email" 
+             Text="{Binding Email}"
+             />
+
+     
+      <Entry Placeholder="Please enter your password"
+             IsPassword="True"
+             Text="{Binding Password}"/>
+
+      <Button Text="Login"
+              Margin="0,6,0,0"
+              BackgroundColor="DodgerBlue" 
+              Command="{Binding OnLoginCommand}"/>
+
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
