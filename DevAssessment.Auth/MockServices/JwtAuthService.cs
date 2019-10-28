@@ -14,9 +14,6 @@ namespace DevAssessment.Auth.MockServices
         /// <summary>
         /// The secret key we use to encrypt out token with.
         /// </summary>
-        /// 
-
-        //the secret key should be imported from server/cloud configurations
         public string SecretKey { get; set; } = "TW9zaGVFcmV6UHJpdmF0ZUtleQ==";
 
 
