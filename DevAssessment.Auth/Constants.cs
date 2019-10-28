@@ -14,6 +14,7 @@ namespace DevAssessment.Auth
 
         public const string JwtToken = "JwtToken";
         public const string JwtTokenValidTime = "JwtTokenValidTime";
+        public const string IsAdmin = "IsAdmin";
 
         #endregion
     }

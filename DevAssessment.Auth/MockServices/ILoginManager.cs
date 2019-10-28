@@ -9,5 +9,7 @@ namespace DevAssessment.Auth.MockServices
     public interface ILoginManager
     {
         Task<bool> LoginUser(User user);
+
+        Task<bool> IsAdmin(string userName);
     }
 }
