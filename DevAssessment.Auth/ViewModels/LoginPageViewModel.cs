@@ -2,6 +2,7 @@
 using DevAssessment.Auth.Model;
 using Prism.Commands;
 using Prism.Events;
+using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
@@ -26,7 +27,6 @@ namespace DevAssessment.Auth.ViewModels
         private readonly ILoginManager _loginManager;
         private readonly IJwtAuthService _jwtAuthService;
 
-
         public LoginPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService,
                                   IEventAggregator eventAggregator, ILoginManager loginManager, IJwtAuthService jwtAuthService)
         {
@@ -35,8 +35,8 @@ namespace DevAssessment.Auth.ViewModels
             _eventAggregator = eventAggregator;
             _loginManager = loginManager;
             _jwtAuthService = jwtAuthService;
-
-            OnLoginCommand = new DelegateCommand(async () => await GoToHomePage());
+           
+            OnLoginCommand = new DelegateCommand(async () => await GoToWelcomePage());
 
         }
 
@@ -81,7 +81,7 @@ namespace DevAssessment.Auth.ViewModels
         public DelegateCommand OnLoginCommand { get; set; }
 
 
-        async Task GoToHomePage()
+        async Task GoToWelcomePage()
         {
             try
             {
@@ -104,7 +104,7 @@ namespace DevAssessment.Auth.ViewModels
                     return;
                 }
 
-                var isValidUser = await _loginManager.LoginUser(new User { UserName = Email, Password = Password, IsAdmin = true });
+                var isValidUser = await _loginManager.LoginUser(new User { UserName = Email, Password = Password});
 
                 if (!isValidUser)
                 {
@@ -116,12 +116,16 @@ namespace DevAssessment.Auth.ViewModels
 
                 if (!isTokenGenerated)
                 {
-                    await _pageDialogService.DisplayAlertAsync("Alert!", "Email or Password is wrong", "Ok");
+                    await _pageDialogService.DisplayAlertAsync("Bad Request", "Can't Login", "Ok");
                     return;
                 }
 
                 _eventAggregator.GetEvent<UserTypeEvent>().Publish(_userName);
 
+                var isAdmin = await _loginManager.IsAdmin(Email);
+
+                Application.Current.Properties[Constants.IsAdmin] = isAdmin;
+                await Application.Current.SavePropertiesAsync();
 
                 //reseting MainPage after Login Page,
 

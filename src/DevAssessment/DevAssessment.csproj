@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DevAssesment.Admin\DevAssesment.Admin.csproj" />
     <ProjectReference Include="..\..\DevAssessment.Auth\DevAssessment.Auth.csproj" />
+    <ProjectReference Include="..\..\HelpersLibrary\HelpersLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

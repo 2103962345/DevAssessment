@@ -1,4 +1,5 @@
-﻿using DevAssessment.Auth;
+﻿using DevAssesment.Admin;
+using DevAssessment.Auth;
 using DevAssessment.Auth.ViewModels;
 using DevAssessment.Auth.Views;
 using DevAssessment.Services;
@@ -52,6 +53,7 @@ namespace DevAssessment
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<AuthenticationModule>();
+            moduleCatalog.AddModule<AdminModule>(InitializationMode.OnDemand);
         }
 
         //public App()
