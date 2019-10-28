@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using DevAssessment.DependencyService;
+using DevAssessment.iOS.DependencyServices;
 using Foundation;
 using Prism;
 using Prism.Ioc;
@@ -37,6 +38,9 @@ namespace DevAssessment.iOS
             public void RegisterTypes(IContainerRegistry containerRegistry)
             {
                 //do the platform specific registrations here..
+                containerRegistry.Register<ITextToSpeechService, TextToSpeechService>();
+                containerRegistry.Register<IDeviceOrientationService, DeviceOrientationService>();
+                containerRegistry.Register<IPhotoPickerService, PhotoPickerService>();
             }
         }
     }

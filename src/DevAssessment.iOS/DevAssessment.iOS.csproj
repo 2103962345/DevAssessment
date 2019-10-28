@@ -60,6 +60,9 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DependencyServices\DeviceOrientationService.cs" />
+    <Compile Include="DependencyServices\PhotoPickerService.cs" />
+    <Compile Include="DependencyServices\TextToSpeechService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />

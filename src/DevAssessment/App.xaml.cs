@@ -23,6 +23,11 @@ namespace DevAssessment
         public App() : this(null) { }
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
+        protected override IContainerExtension CreateContainerExtension()
+        {
+            return base.CreateContainerExtension();
+        }
+
         protected override async void OnInitialized()
         {
 
@@ -47,6 +52,7 @@ namespace DevAssessment
             containerRegistry.RegisterForNavigation<ContactUsPage>();
             containerRegistry.RegisterForNavigation<AboutPage>();
             containerRegistry.RegisterForNavigation<LogOutPage>();
+            containerRegistry.RegisterForNavigation<DSPage, DSPageViewModel>();
         }
 
 
