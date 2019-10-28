@@ -1,16 +1,18 @@
 ﻿using DevAssessment.Attributes;
 using DevAssessment.Views;
 
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: MenuItem("Home", nameof(HomePage))]
+
+[assembly: MenuItem("Log Out", nameof(LogOutPage))]
 namespace DevAssessment.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class LogOutPage : ContentPage
     {
-        public HomePage()
+        public LogOutPage()
         {
             InitializeComponent();
         }

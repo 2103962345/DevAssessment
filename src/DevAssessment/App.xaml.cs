@@ -1,6 +1,7 @@
 ﻿using DevAssessment.Auth;
 using DevAssessment.Auth.ViewModels;
 using DevAssessment.Auth.Views;
+using DevAssessment.Services;
 using DevAssessment.ViewModel;
 using DevAssessment.Views;
 using Prism;
@@ -27,19 +28,24 @@ namespace DevAssessment
 
             InitializeComponent();
 
-            if (Current.Properties.ContainsKey(Constants.JwtToken) && Current.Properties.ContainsKey(Constants.JwtTokenValidTime)
+            if (Current.Properties.ContainsKey(Constants.JwtToken) && Current.Properties.ContainsKey(Constants.JwtTokenValidTime) 
                 && (DateTime)Current.Properties[Constants.JwtTokenValidTime] > DateTime.Now)
-                await NavigationService.NavigateAsync("HomePage");
+                await NavigationService.NavigateAsync("MainPage/NavigationPage/HomePage");
             else
                 await NavigationService.NavigateAsync("LoginPage");
-
 
         }
 
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+            containerRegistry.RegisterSingleton<IMenuService, MenuService>();
+            containerRegistry.RegisterForNavigation<ContactUsPage>();
+            containerRegistry.RegisterForNavigation<AboutPage>();
+            containerRegistry.RegisterForNavigation<LogOutPage>();
         }
 
 
