@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DevAssessment.Views.DSPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Visual="Material">
+  <ContentPage.Content>
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="150" />
+        <RowDefinition Height="150" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <StackLayout Margin="20,35,20,0" HorizontalOptions="FillAndExpand" Grid.Row="0">
+        <Entry Text="{Binding TextToSay}" />
+        <Button Text="Speak"
+                    Command="{Binding OnSpeakCommandClicked}" />
+      </StackLayout>
+
+      <StackLayout Margin="20,15,20,0" Grid.Row="1">
+        <Label Text="Device Orientation"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+        <Button Text="Get Device Orientation"
+                    Command="{Binding OnOrientationCommandClicked}" />
+        <Label Text="{Binding ShowOrientation}"
+                   HorizontalOptions="Center" />
+      </StackLayout>
+
+      <StackLayout Margin="20,15,20,20" Grid.Row="2">
+          <Label Text="Photo Picker"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+          <Button Text="Pick Photo"
+                    Command="{Binding OnPhotoPickerCommandClicked}" />
+          <Image Source="{Binding Image}" />
+        </StackLayout>
+        
+     
+
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>
