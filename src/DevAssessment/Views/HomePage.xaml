@@ -7,7 +7,8 @@
              xmlns:local="clr-namespace:DevAssessment"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="DevAssessment.Views.HomePage">
+             x:Class="DevAssessment.Views.HomePage"
+             Visual="Material">
     <ContentPage.Content>
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
       <Label Text="{Binding Name, StringFormat='Welcome {0}'}"
