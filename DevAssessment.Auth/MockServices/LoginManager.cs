@@ -13,9 +13,9 @@ namespace DevAssessment.Auth.MockServices
             //fake delay for 0.1 second..
             await Task.Delay(100);
 
-            if (user.UserName == "abdul.wasey@nxb.com.pk" && user.Password == "12345")
+            if (user.UserName == "abdul@gmail.com" && user.Password == "12345")
                 return true;
-            else if (user.UserName == "ali.khan@gmail.com" && user.Password == "12345")
+            else if (user.UserName == "ali@gmail.com" && user.Password == "12345")
                 return true;
             else
                 return false;
@@ -26,7 +26,7 @@ namespace DevAssessment.Auth.MockServices
             //fake delay for 0.1 second..
             await Task.Delay(100);
 
-            if (userName == "abdul.wasey@nxb.com.pk")
+            if (userName == "abdul@gmail.com")
                 return true;
             else
                 return false;

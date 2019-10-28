@@ -6,7 +6,8 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
-             x:Class="DevAssessment.Auth.Views.LoginPage">
+             x:Class="DevAssessment.Auth.Views.LoginPage"
+             Visual="Material">
   <ContentPage.Content>
 
     <StackLayout Padding="20" 
