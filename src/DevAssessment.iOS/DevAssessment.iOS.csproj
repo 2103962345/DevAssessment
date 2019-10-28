@@ -139,4 +139,7 @@
       <Name>DevAssessment</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile_avatar.png" />
+  </ItemGroup>
 </Project>
