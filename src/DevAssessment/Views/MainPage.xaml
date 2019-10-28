@@ -8,7 +8,7 @@
              xmlns:local="clr-namespace:DevAssessment"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.MainPage"
-             Visual="Material">
+             Visual="Default">
 <MasterDetailPage.Master>
     <ContentPage Title="Menu">
       <StackLayout Padding="20" Margin="0,10,0,0">
@@ -16,11 +16,21 @@
           <Label Text="{x:Static local:IconFont.HandPointRight}"
                FontFamily="{StaticResource FontAwesome5Regular}"
                FontSize="Large"
-               HorizontalTextAlignment="Center"/>
+               HorizontalTextAlignment="Center" />
           
           <Label Text="Master Page" FontSize="Medium" FontAttributes="Bold" />
         </StackLayout>
-        
+
+        <Frame Padding="0" Margin="0,5,0,0" 
+               CornerRadius="120"
+               HeightRequest="200"
+               HorizontalOptions="Center"
+               IsClippedToBounds="True">
+          <Image  Source="profile_avatar.png"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"/>
+        </Frame>
+
         <ListView ItemsSource="{Binding Items}" SelectionMode="None">
 
           <ListView.Behaviors>
