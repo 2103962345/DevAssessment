@@ -27,7 +27,12 @@ namespace DevAssessment
 
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("LoginPage");
+            if (Current.Properties.ContainsKey(Constants.JwtToken) && Current.Properties.ContainsKey(Constants.JwtTokenValidTime)
+                && (DateTime)Current.Properties[Constants.JwtTokenValidTime] > DateTime.Now)
+                await NavigationService.NavigateAsync("HomePage");
+            else
+                await NavigationService.NavigateAsync("LoginPage");
+
 
         }
 

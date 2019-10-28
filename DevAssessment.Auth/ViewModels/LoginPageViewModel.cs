@@ -137,6 +137,14 @@ namespace DevAssessment.Auth.ViewModels
                 return false;
             else
             {
+                var handler = new JwtSecurityTokenHandler();
+                var readToken = handler.ReadToken(token);
+                var tokenValidationTime = readToken.ValidTo;
+
+                // for presisting the jwt token and its valid datetime.
+                Application.Current.Properties[Constants.JwtToken] = token;
+                Application.Current.Properties[Constants.JwtTokenValidTime] = tokenValidationTime;
+                await Application.Current.SavePropertiesAsync();
                 return true;
             }
 
