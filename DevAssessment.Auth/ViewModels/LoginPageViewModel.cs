@@ -6,6 +6,7 @@ using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,6 +30,7 @@ namespace DevAssessment.Auth.ViewModels
 
         public LoginPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService,
                                   IEventAggregator eventAggregator, ILoginManager loginManager, IJwtAuthService jwtAuthService)
+                                    
         {
             _navigationService = navigationService;
             _pageDialogService = pageDialogService;

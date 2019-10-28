@@ -1,18 +1,17 @@
 ﻿using DevAssesment.Admin;
 using DevAssessment.Auth;
-using DevAssessment.Auth.ViewModels;
-using DevAssessment.Auth.Views;
+using DevAssessment.CustomDialogs;
 using DevAssessment.Services;
 using DevAssessment.ViewModel;
 using DevAssessment.Views;
+using DryIoc;
 using Prism;
-using Prism.DryIoc;
+using Prism.DryIoc.Extensions;
 using Prism.Ioc;
 using Prism.Logging;
 using Prism.Modularity;
 using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 
 namespace DevAssessment
@@ -53,6 +52,11 @@ namespace DevAssessment
             containerRegistry.RegisterForNavigation<AboutPage>();
             containerRegistry.RegisterForNavigation<LogOutPage>();
             containerRegistry.RegisterForNavigation<DSPage, DSPageViewModel>();
+            containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
+            containerRegistry.RegisterDialog<LogDialog, LogDialogViewModel>();
+
+            containerRegistry.Register<ILogger, ConsoleLoggingService>();
+           
         }
 
 
