@@ -7,8 +7,20 @@
              xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms.Extended"
              mc:Ignorable="d"
              x:Class="DevAssessment.App">
-  
-    <prism:PrismApplication.Resources>
 
-    </prism:PrismApplication.Resources>
+  <prism:PrismApplication.Resources>
+
+    <ResourceDictionary>
+
+      <OnPlatform x:TypeArguments="x:String"
+                        x:Key="FontAwesome5Regular">
+        <On Platform="Android"
+                    Value="Font Awesome 5 Free-Regular-400.otf#Regular" />
+        <On Platform="iOS"
+                    Value="Font Awesome 5 Free-Regular-400" />
+       
+      </OnPlatform>
+    </ResourceDictionary>
+
+  </prism:PrismApplication.Resources>
 </prism:PrismApplication>

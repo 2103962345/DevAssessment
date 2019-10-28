@@ -1,4 +1,5 @@
-﻿using DevAssessment.Models;
+﻿using DevAssessment.Attributes;
+using DevAssessment.Models;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,15 @@ namespace DevAssessment.Services
     {
         private readonly IModuleManager _moduleManager;
 
-
-        public MenuService(IModuleManager moduleManager, IModuleCatalog moduleCatalog)
+        public MenuService(IModuleManager moduleManager)
         {
             _moduleManager = moduleManager;
 
-            IEnumerable<Attributes.MenuItemAttribute> menuItemAttributes = GetType().Assembly.GetCustomAttributes<Attributes.MenuItemAttribute>();
+            IEnumerable<MenuItemAttribute> menuItemAttributes = GetType().Assembly.GetCustomAttributes<MenuItemAttribute>();
 
             var categoryList = new List<Item>();
+
+
 
             categoryList = menuItemAttributes.Select(x => new Item()
             {
@@ -30,8 +32,6 @@ namespace DevAssessment.Services
 
             if (Application.Current.Properties.ContainsKey(Constants.IsAdmin) && (bool)Application.Current.Properties[Constants.IsAdmin])
             {
-                //loading admin module here,,
-
                 _moduleManager.LoadModule("AdminModule");
 
                 categoryList.Insert(0, new Item() { Name = "Admin", Uri = "AdminPage" });
@@ -43,7 +43,7 @@ namespace DevAssessment.Services
 
         public List<Item> Items { get; set; }
 
-      
+
     }
 }
 
