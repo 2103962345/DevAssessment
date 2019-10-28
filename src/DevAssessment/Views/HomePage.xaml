@@ -11,14 +11,23 @@
              Visual="Material">
     <ContentPage.Content>
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-      <Label Text="{Binding Name, StringFormat='Welcome {0}'}"
+      <Label Text="{Binding Name, Mode=TwoWay}"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="Large"
+                FontAttributes="Bold"
+                TextColor="Black" />
 
       <Label Text="{x:Static local:IconFont.Clock}"
                FontFamily="{StaticResource FontAwesome5Regular}"
                FontSize="Large"
                HorizontalTextAlignment="Center"/>
+
+      <Button Margin="0,8,0,0" Text="Show Custom Dialog" 
+              Command="{Binding CustomDialogCommand}"/>
+
+      <Button Margin="0,8,0,0" Text="Show Error Dialog" 
+              Command="{Binding ErrorDialogCommand}"/>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
