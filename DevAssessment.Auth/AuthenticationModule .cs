@@ -3,7 +3,6 @@ using DevAssessment.Auth.ViewModels;
 using DevAssessment.Auth.Views;
 using Prism.Ioc;
 using Prism.Modularity;
-using System;
 
 namespace DevAssessment.Auth
 {

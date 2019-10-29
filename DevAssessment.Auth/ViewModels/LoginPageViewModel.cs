@@ -1,17 +1,14 @@
-﻿using DevAssessment.Auth.MockServices;
+﻿using Common.Resx;
+using DevAssessment.Auth.MockServices;
 using DevAssessment.Auth.Model;
 using Prism.Commands;
 using Prism.Events;
-using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
-using Prism.Services.Dialogs;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -87,14 +84,15 @@ namespace DevAssessment.Auth.ViewModels
         {
             try
             {
+                
                 if (string.IsNullOrEmpty(Email))
                 {
-                    await _pageDialogService.DisplayAlertAsync("Alert", "UserName is required", "Ok");
+                    await _pageDialogService.DisplayAlertAsync(AppResources.AlertDialogTitle, AppResources.AlertDialogUserNameMessage, AppResources.AlertDialogAcceptButtonText);
                     return;
                 }
                 if (string.IsNullOrEmpty(Password))
                 {
-                    await _pageDialogService.DisplayAlertAsync("Alert", "Password is required", "Ok");
+                    await _pageDialogService.DisplayAlertAsync(AppResources.AlertDialogTitle, AppResources.AlertDialogPasswordMessage, AppResources.AlertDialogAcceptButtonText);
                     return;
                 }
 
@@ -102,7 +100,7 @@ namespace DevAssessment.Auth.ViewModels
 
                 if (!isUserNameValid)
                 {
-                    await _pageDialogService.DisplayAlertAsync("Alert", "Email is not Valid", "Ok");
+                    await _pageDialogService.DisplayAlertAsync(AppResources.AlertDialogTitle, AppResources.AlertDialogEmailValidationMessage, AppResources.AlertDialogAcceptButtonText);
                     return;
                 }
 
@@ -110,7 +108,7 @@ namespace DevAssessment.Auth.ViewModels
 
                 if (!isValidUser)
                 {
-                    await _pageDialogService.DisplayAlertAsync("Error!", "Email or Password is wrong", "Ok");
+                    await _pageDialogService.DisplayAlertAsync(AppResources.ErrorDialogTitle, AppResources.ErrorDialogLoginAuthMessage, AppResources.AlertDialogAcceptButtonText);
                     return;
                 }
 
@@ -118,7 +116,7 @@ namespace DevAssessment.Auth.ViewModels
 
                 if (!isTokenGenerated)
                 {
-                    await _pageDialogService.DisplayAlertAsync("Bad Request", "Can't Login", "Ok");
+                    await _pageDialogService.DisplayAlertAsync(AppResources.BadRequestDialogTitle, AppResources.BadRequestLoginMessage, AppResources.AlertDialogAcceptButtonText);
                     return;
                 }
 

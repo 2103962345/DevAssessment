@@ -6,12 +6,13 @@
              mc:Ignorable="d"
              x:Class="DevAssessment.CustomDialogs.LogDialog"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:common="clr-namespace:Common;assembly=Common"
              prism:ViewModelLocator.AutowireViewModel="True"
              HasShadow="False"
              BackgroundColor="White">
 
   <StackLayout>
-    <Label Text="Log Details" 
+    <Label Text="{common:Translate LogAlertDialogTitle}" 
            FontSize="Large" 
            FontAttributes="Bold"
            HorizontalOptions="StartAndExpand"
@@ -21,7 +22,7 @@
                 FontSize="Medium"
                 MaxLines="10"
                  />
-    <Button Text="Close Dialog"
+    <Button Text="{common:Translate CustomDialogCloseButtonText}"
                 Command="{Binding CloseCommand}"
                 TextColor="White"
                 HorizontalOptions="FillAndExpand"

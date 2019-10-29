@@ -1,4 +1,5 @@
-﻿using DevAssessment.Auth;
+﻿using Common.Resx;
+using DevAssessment.Auth;
 using DevAssessment.DialogExtentions;
 using Prism.Commands;
 using Prism.Events;
@@ -43,7 +44,7 @@ namespace DevAssessment.ViewModel
 
         private void CustomDialogClicked()
         {
-            CustomDialog.DisplayAlert(_dialogService, "This is a custom user dialog");
+            CustomDialog.DisplayAlert(_dialogService, AppResources.CustomAlertDialogMessage);
         }
 
         private void ErrorDialogClicked()
@@ -67,7 +68,7 @@ namespace DevAssessment.ViewModel
         public void ShowUserName(string userName)
         {
             if (!string.IsNullOrEmpty(userName))
-                Name = "Welcome  " + userName;
+                Name = userName;
         }
     }
 }

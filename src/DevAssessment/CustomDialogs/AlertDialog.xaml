@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="DevAssessment.CustomDialogs.AlertDialog"
+             xmlns:common="clr-namespace:Common;assembly=Common"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              HasShadow="False"
@@ -17,7 +18,7 @@
                 FontSize="Medium"
                 FontAttributes="Bold"
                  />
-    <Button Text="Close Dialog"
+    <Button Text="{common:Translate CustomDialogCloseButtonText}"
                 Command="{Binding CloseCommand}"
                 TextColor="White"
                 HorizontalOptions="FillAndExpand"

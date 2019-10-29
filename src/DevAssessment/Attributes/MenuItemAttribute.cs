@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Resx;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,7 +10,8 @@ namespace DevAssessment.Attributes
     {
         public MenuItemAttribute(string displayName, string navigationName)
         {
-            DisplayName = displayName;
+            
+            DisplayName = AppResources.ResourceManager.GetString(displayName,AppResources.Culture);
             NavigationName = navigationName;
 
         }

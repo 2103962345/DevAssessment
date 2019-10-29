@@ -6,9 +6,12 @@
              mc:Ignorable="d"
              xmlns:prism="http://prismlibrary.com"
              xmlns:local="clr-namespace:DevAssessment"
+             xmlns:common="clr-namespace:Common;assembly=Common"     
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.MainPage"
-             Visual="Default">
+             Visual="Default"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
 <MasterDetailPage.Master>
     <ContentPage Title="Menu">
       <StackLayout Padding="20" Margin="0,10,0,0">
@@ -17,12 +20,12 @@
                FontFamily="{StaticResource FontAwesome5Regular}"
                FontSize="Large"
                HorizontalTextAlignment="Center" />
-          
-          <Label Text="Master Page" FontSize="Medium" FontAttributes="Bold" />
+
+          <Label Text="{common:Translate MasterPageLabel}" FontSize="Medium" FontAttributes="Bold" />
         </StackLayout>
 
         <Frame Padding="0" Margin="0,5,0,0" 
-               CornerRadius="120"
+               CornerRadius="100"
                HeightRequest="200"
                HorizontalOptions="Center"
                IsClippedToBounds="True">

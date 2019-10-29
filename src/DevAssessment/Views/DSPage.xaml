@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="DevAssessment.Views.DSPage"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:common="clr-namespace:Common;assembly=Common"
              prism:ViewModelLocator.AutowireViewModel="True"
              Visual="Material">
   <ContentPage.Content>
@@ -20,25 +21,25 @@
 
       <StackLayout Margin="20,35,20,0" HorizontalOptions="FillAndExpand" Grid.Row="0">
         <Entry Text="{Binding TextToSay}" />
-        <Button Text="Speak"
+        <Button Text="{common:Translate ButtonSpeak}"
                     Command="{Binding OnSpeakCommandClicked}" />
       </StackLayout>
 
       <StackLayout Margin="20,15,20,0" Grid.Row="1">
-        <Label Text="Device Orientation"
+        <Label Text="{common:Translate LabelDeviceOrientation}"
                    FontAttributes="Bold"
                    HorizontalOptions="Center" />
-        <Button Text="Get Device Orientation"
+        <Button Text="{common:Translate ButtonGetDeviceOrientation}"
                     Command="{Binding OnOrientationCommandClicked}" />
         <Label Text="{Binding ShowOrientation}"
                    HorizontalOptions="Center" />
       </StackLayout>
 
       <StackLayout Margin="20,15,20,20" Grid.Row="2">
-          <Label Text="Photo Picker"
+        <Label Text="{common:Translate LabelPhotoPicker}"
                    FontAttributes="Bold"
                    HorizontalOptions="Center" />
-          <Button Text="Pick Photo"
+        <Button Text="{common:Translate ButtonPickPhoto}"
                     Command="{Binding OnPhotoPickerCommandClicked}" />
           <Image Source="{Binding Image}" />
         </StackLayout>

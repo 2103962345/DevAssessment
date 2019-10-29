@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:common="clr-namespace:Common;assembly=Common"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
@@ -15,16 +16,16 @@
                  VerticalOptions="CenterAndExpand"
                  HorizontalOptions="FillAndExpand">
 
-      <Entry Placeholder="Please enter your email" 
+      <Entry Placeholder="{common:Translate EmailPlaceholder}"
              Text="{Binding Email}"
              />
 
-     
-      <Entry Placeholder="Please enter your password"
+
+      <Entry Placeholder="{common:Translate PasswordPlaceholder}"
              IsPassword="True"
              Text="{Binding Password}"/>
 
-      <Button Text="Login"
+      <Button Text="{common:Translate LoginButton}"
               Margin="0,6,0,0"
               BackgroundColor="DodgerBlue" 
               Command="{Binding OnLoginCommand}"/>

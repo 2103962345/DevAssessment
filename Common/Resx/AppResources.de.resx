@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminPageWelcomeMessage" xml:space="preserve">
+    <value>Willkommen auf der Admin-Seite!</value>
+    <comment>Admin Page Welcome Lable Text on the center of screen</comment>
+  </data>
+  <data name="AlertDialogAcceptButtonText" xml:space="preserve">
+    <value>Okay</value>
+    <comment>adding alert dialog's accept button text</comment>
+  </data>
+  <data name="AlertDialogEmailValidationMessage" xml:space="preserve">
+    <value>Email ist ungültig</value>
+    <comment>email format validation message on alert dialog</comment>
+  </data>
+  <data name="AlertDialogPasswordMessage" xml:space="preserve">
+    <value>Passwort wird benötigt</value>
+    <comment>password validation message</comment>
+  </data>
+  <data name="AlertDialogTitle" xml:space="preserve">
+    <value>Warnen!</value>
+    <comment>title name on the alert dialog</comment>
+  </data>
+  <data name="AlertDialogUserNameMessage" xml:space="preserve">
+    <value>Ein Benutzername ist erforderlich</value>
+    <comment>username validation message</comment>
+  </data>
+  <data name="BadRequestDialogTitle" xml:space="preserve">
+    <value>Ungültige Anforderung</value>
+    <comment>title name on the bad request dialog</comment>
+  </data>
+  <data name="BadRequestLoginMessage" xml:space="preserve">
+    <value>Ich kann mich nicht anmelden</value>
+    <comment>showing bad request message on Login Authentication</comment>
+  </data>
+  <data name="ButtonGetDeviceOrientation" xml:space="preserve">
+    <value>Holen Sie sich die Geräteorientierung</value>
+    <comment>showing text "Get Device Orientation" on button</comment>
+  </data>
+  <data name="ButtonPickPhoto" xml:space="preserve">
+    <value>Foto auswählen</value>
+    <comment>showing text "Pick Photo" on button</comment>
+  </data>
+  <data name="ButtonSpeak" xml:space="preserve">
+    <value>Sprechen</value>
+    <comment>showing text "Speak" on button</comment>
+  </data>
+  <data name="CustomAlertDialogMessage" xml:space="preserve">
+    <value>Dies ist ein benutzerdefinierter Benutzerdialog</value>
+    <comment>showing  a message to the user on custom dialog</comment>
+  </data>
+  <data name="CustomDialogCloseButtonText" xml:space="preserve">
+    <value>Schließen Sie den Dialog</value>
+    <comment>close dialog button text</comment>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>Bitte geben Sie ihre E-Mail-Adresse ein</value>
+    <comment>input filed for entering email</comment>
+  </data>
+  <data name="ErrorDialogLoginAuthMessage" xml:space="preserve">
+    <value>E-Mail oder Passwort ist falsch</value>
+    <comment>login authentication error message</comment>
+  </data>
+  <data name="ErrorDialogTitle" xml:space="preserve">
+    <value>Error!</value>
+    <comment>title name on the error dialog</comment>
+  </data>
+  <data name="LabelDeviceOrientation" xml:space="preserve">
+    <value>Geräteorientierung</value>
+    <comment>showing the "device orientation" on label</comment>
+  </data>
+  <data name="LabelPhotoPicker" xml:space="preserve">
+    <value>Fotoauswahl</value>
+    <comment>showing text "Photo Picker" on button</comment>
+  </data>
+  <data name="LogAlertDialogTitle" xml:space="preserve">
+    <value>Protokolldetails</value>
+    <comment>showing log custom dialog popup title</comment>
+  </data>
+  <data name="LoginButton" xml:space="preserve">
+    <value>Einloggen</value>
+    <comment>this string appears on a button to login into app</comment>
+  </data>
+  <data name="MasterPageLabel" xml:space="preserve">
+    <value>Masterseite</value>
+    <comment>Master Page Label which will present top of the page.</comment>
+  </data>
+  <data name="MenuNameAboutUs" xml:space="preserve">
+    <value>Über uns</value>
+    <comment>showing About Us menu text</comment>
+  </data>
+  <data name="MenuNameContactUs" xml:space="preserve">
+    <value>Kontaktiere uns</value>
+    <comment>showing Contact Us menu text</comment>
+  </data>
+  <data name="MenuNameDependencyServices" xml:space="preserve">
+    <value>Abhängigkeitsdienste</value>
+    <comment>showing Dependency Services menu text</comment>
+  </data>
+  <data name="MenuNameHome" xml:space="preserve">
+    <value>Zuhause</value>
+    <comment>showing Home menu  text</comment>
+  </data>
+  <data name="MenuNameLogOut" xml:space="preserve">
+    <value>Ausloggen</value>
+    <comment>showing Log Out menu  text</comment>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>Bitte geben Sie Ihr Passwort ein</value>
+    <comment>input field for entering password</comment>
+  </data>
+</root>
