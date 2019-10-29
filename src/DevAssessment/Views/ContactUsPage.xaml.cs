@@ -1,4 +1,5 @@
 ﻿
+using Common.Resx;
 using DevAssessment.Attributes;
 using DevAssessment.Views;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: MenuItem("Contact Us", nameof(ContactUsPage))]
+[assembly: MenuItem(nameof(AppResources.MenuNameContactUs), nameof(ContactUsPage))]
 namespace DevAssessment.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
