@@ -12,6 +12,9 @@ using Prism.Logging;
 using Prism.Modularity;
 using System;
 using Xamarin.Forms;
+using Xamarin.Essentials.Implementation;
+using Xamarin.Essentials.Interfaces;
+
 
 
 namespace DevAssessment
@@ -47,16 +50,31 @@ namespace DevAssessment
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
-            containerRegistry.RegisterSingleton<IMenuService, MenuService>();
             containerRegistry.RegisterForNavigation<ContactUsPage>();
             containerRegistry.RegisterForNavigation<AboutPage>();
             containerRegistry.RegisterForNavigation<LogOutPage>();
             containerRegistry.RegisterForNavigation<DSPage, DSPageViewModel>();
+            containerRegistry.RegisterForNavigation<NewsListPage, NewsListPageViewModel>();
+            containerRegistry.RegisterForNavigation<NewsCategoriesPage, NewsCategoriesViewModel>();
+            containerRegistry.RegisterForNavigation<TechNewsPage, TechNewsPageViewModel>();
+            containerRegistry.RegisterForNavigation<SportsNewsPage, SportsNewsPageViewModel>();
+            containerRegistry.RegisterForNavigation<ScienceNewsPage , ScienceNewsPageViewModel>();
+            containerRegistry.RegisterForNavigation<HealthNewsPage,HealthNewsPageViewModel>();
+
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
             containerRegistry.RegisterDialog<LogDialog, LogDialogViewModel>();
+            containerRegistry.RegisterDialog<WebViewPageDialog, WebViewPageDialogViewModel>();
 
             containerRegistry.Register<ILogger, ConsoleLoggingService>();
+
+
+            containerRegistry.RegisterSingleton<IMenuService, MenuService>();
+            containerRegistry.RegisterSingleton<INewsService, NewsService>();
+
+
            
+            containerRegistry.Register<IConnectivity, ConnectivityImplementation>();
+
         }
 
 

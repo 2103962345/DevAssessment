@@ -11,7 +11,11 @@
              HasShadow="False"
              BackgroundColor="White">
   <StackLayout>
-
+    <Label Text="{common:Translate AlertDialogTitle}" 
+           FontSize="Large" 
+           FontAttributes="Bold"
+           HorizontalOptions="StartAndExpand"
+           TextColor="Red" />
     
     <Label Text="{Binding AlertMessage}"
                 HorizontalOptions="CenterAndExpand"

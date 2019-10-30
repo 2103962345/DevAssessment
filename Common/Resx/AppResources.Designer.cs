@@ -133,6 +133,24 @@ namespace Common.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show Custom Dialog.
+        /// </summary>
+        public static string BtnTextShowCustomDialog {
+            get {
+                return ResourceManager.GetString("BtnTextShowCustomDialog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Error Dialog.
+        /// </summary>
+        public static string BtnTextShowErrorDialog {
+            get {
+                return ResourceManager.GetString("BtnTextShowErrorDialog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get Device Orientation.
         /// </summary>
         public static string ButtonGetDeviceOrientation {
@@ -291,6 +309,24 @@ namespace Common.Resx {
         public static string MenuNameLogOut {
             get {
                 return ResourceManager.GetString("MenuNameLogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top News Categories.
+        /// </summary>
+        public static string MenuNameNewsCategoryList {
+            get {
+                return ResourceManager.GetString("MenuNameNewsCategoryList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest News.
+        /// </summary>
+        public static string MenuNameNewsList {
+            get {
+                return ResourceManager.GetString("MenuNameNewsList", resourceCulture);
             }
         }
         
