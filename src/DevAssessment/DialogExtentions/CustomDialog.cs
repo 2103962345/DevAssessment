@@ -10,6 +10,7 @@ namespace DevAssessment.DialogExtentions
     {
         public const string keyAlertMessage = "AlertMessage";
         public const string KeyLogMessage = "LogMessage";
+        public const string KeyWebViewMessage = "HyperLink";
 
         
         public static void DisplayAlert(this IDialogService dialogService, string message)
@@ -27,6 +28,15 @@ namespace DevAssessment.DialogExtentions
 
             dialogService.ShowDialog(typeof(LogDialog).Name, param , CloseLogDialog );
         }
+
+        public static void DisplayWebView(this IDialogService dialogService, string link)
+        {
+            var param = new DialogParameters();
+            param.Add(KeyWebViewMessage, link);
+
+            dialogService.ShowDialog(nameof(WebViewPageDialog), param, CloseDialog);
+        }
+
 
         private static void CloseDialog(IDialogResult dialogResult)
         {

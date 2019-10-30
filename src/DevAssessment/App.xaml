@@ -17,9 +17,10 @@
         <On Platform="Android"
                     Value="Font Awesome 5 Free-Regular-400.otf#Regular" />
         <On Platform="iOS"
-                    Value="Font Awesome 5 Free-Regular-400" />
+                    Value="Font Awesome 5 Free" />
        
       </OnPlatform>
+      
     </ResourceDictionary>
 
   </prism:PrismApplication.Resources>

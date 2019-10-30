@@ -44,14 +44,14 @@ namespace DevAssessment.ViewModel
 
         private void CustomDialogClicked()
         {
-            CustomDialog.DisplayAlert(_dialogService, AppResources.CustomAlertDialogMessage);
+            _dialogService.DisplayAlert(AppResources.CustomAlertDialogMessage);
         }
 
         private void ErrorDialogClicked()
         {
             Exception ex = new Exception(); //null reference exception,,
 
-            CustomDialog.DisplayError(_dialogService, ex);
+            _dialogService.DisplayError(ex);
         }
 
 

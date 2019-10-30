@@ -9,17 +9,22 @@
              xmlns:common="clr-namespace:Common;assembly=Common"     
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.MainPage"
-             Visual="Default"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.UseSafeArea="true">
+             Visual="Default">
 <MasterDetailPage.Master>
     <ContentPage Title="Menu">
-      <StackLayout Padding="20" Margin="0,10,0,0">
-        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+      <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+          <On Platform="Android">0,10,0,0</On>
+          <On Platform="iOS">0,40,0,0</On>
+        </OnPlatform>
+      </ContentPage.Padding>
+      <StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand"  Orientation="Horizontal">
           <Label Text="{x:Static local:IconFont.HandPointRight}"
                FontFamily="{StaticResource FontAwesome5Regular}"
                FontSize="Large"
-               HorizontalTextAlignment="Center" />
+               HorizontalTextAlignment="Center" 
+                />
 
           <Label Text="{common:Translate MasterPageLabel}" FontSize="Medium" FontAttributes="Bold" />
         </StackLayout>

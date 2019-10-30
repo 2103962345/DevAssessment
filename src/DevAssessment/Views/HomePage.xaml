@@ -6,10 +6,12 @@
              mc:Ignorable="d"
              xmlns:local="clr-namespace:DevAssessment"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:common="clr-namespace:Common;assembly=Common"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.HomePage"
              Visual="Material">
     <ContentPage.Content>
+      
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
       <Label Text="{Binding Name, Mode=TwoWay}"
                 VerticalOptions="CenterAndExpand" 
@@ -23,10 +25,10 @@
                FontSize="Large"
                HorizontalTextAlignment="Center"/>
 
-      <Button Margin="0,8,0,0" Text="Show Custom Dialog" 
+      <Button Margin="0,8,0,0" Text="{common:Translate BtnTextShowCustomDialog}" 
               Command="{Binding CustomDialogCommand}"/>
 
-      <Button Margin="0,8,0,0" Text="Show Error Dialog" 
+      <Button Margin="0,8,0,0" Text="{common:Translate BtnTextShowErrorDialog}" 
               Command="{Binding ErrorDialogCommand}"/>
     </StackLayout>
   </ContentPage.Content>

@@ -149,6 +149,12 @@
     <value>Can't Login</value>
     <comment>showing bad request message on Login Authentication</comment>
   </data>
+  <data name="BtnTextShowCustomDialog" xml:space="preserve">
+    <value>Show Custom Dialog</value>
+  </data>
+  <data name="BtnTextShowErrorDialog" xml:space="preserve">
+    <value>Show Error Dialog</value>
+  </data>
   <data name="ButtonGetDeviceOrientation" xml:space="preserve">
     <value>Get Device Orientation</value>
     <comment>showing text "Get Device Orientation" on button</comment>
@@ -220,6 +226,13 @@
   <data name="MenuNameLogOut" xml:space="preserve">
     <value>Log Out</value>
     <comment>showing Log Out menu  text</comment>
+  </data>
+  <data name="MenuNameNewsCategoryList" xml:space="preserve">
+    <value>Top News Categories</value>
+  </data>
+  <data name="MenuNameNewsList" xml:space="preserve">
+    <value>Latest News</value>
+    <comment>showing Latest News on menu</comment>
   </data>
   <data name="PasswordPlaceholder" xml:space="preserve">
     <value>Please enter your password</value>

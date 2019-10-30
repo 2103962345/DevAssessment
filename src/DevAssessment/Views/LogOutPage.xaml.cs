@@ -12,8 +12,6 @@ namespace DevAssessment.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LogOutPage : ContentPage
     {
-      
-
         public LogOutPage()
         {
             InitializeComponent();
