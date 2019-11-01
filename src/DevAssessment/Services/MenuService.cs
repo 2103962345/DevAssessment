@@ -11,33 +11,21 @@ namespace DevAssessment.Services
 {
     public class MenuService : IMenuService
     {
-        private readonly IModuleManager _moduleManager;
-
-        public MenuService(IModuleManager moduleManager)
+        public MenuService()
         {
-            _moduleManager = moduleManager;
 
-            IEnumerable<MenuItemAttribute> menuItemAttributes = GetType().Assembly.GetCustomAttributes<MenuItemAttribute>();
+            IEnumerable<HelpersLibrary.MenuItemAttribute> menuItemAttributes = GetType().Assembly.GetCustomAttributes<HelpersLibrary.MenuItemAttribute>();
 
-            var categoryList = new List<Item>();
+            var itemList = new List<Item>();
 
-
-
-            categoryList = menuItemAttributes.Select(x => new Item()
+            itemList = menuItemAttributes.Select(x => new Item()
             {
                 Name = x.DisplayName,
                 Uri = x.NavigationName
-            }).OrderBy(x => x.Name).ToList();
+            }).ToList();
 
-
-            if (Application.Current.Properties.ContainsKey(Constants.IsAdmin) && (bool)Application.Current.Properties[Constants.IsAdmin])
-            {
-                _moduleManager.LoadModule("AdminModule");
-
-                categoryList.Insert(0, new Item() { Name = "Admin", Uri = "AdminPage" });
-            }
-
-            Items = categoryList;
+            if(itemList.Count > 0)
+                Items = new List<Item>(itemList);
         }
 
 

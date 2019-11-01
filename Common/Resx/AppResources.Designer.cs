@@ -178,6 +178,24 @@ namespace Common.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You don&apos;t have any internet connection..
+        /// </summary>
+        public static string ConnectionInternetNotAvailable {
+            get {
+                return ResourceManager.GetString("ConnectionInternetNotAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please check your internet connection..
+        /// </summary>
+        public static string ConnectionPleaseCheckInternet {
+            get {
+                return ResourceManager.GetString("ConnectionPleaseCheckInternet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is a custom user dialog.
         /// </summary>
         public static string CustomAlertDialogMessage {
@@ -273,6 +291,15 @@ namespace Common.Resx {
         public static string MenuNameAboutUs {
             get {
                 return ResourceManager.GetString("MenuNameAboutUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        public static string MenuNameAdmin {
+            get {
+                return ResourceManager.GetString("MenuNameAdmin", resourceCulture);
             }
         }
         

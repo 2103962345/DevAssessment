@@ -22,9 +22,11 @@ namespace DevAssessment.ViewModel
         public DelegateCommand<string> NavigateCommandClicked { get; set; }
         
 
-        private async void NavigateToPage(string pageName)
+        private async void NavigateToPage(string newsCategory)
         {
-            await _navigationService.NavigateAsync(pageName);
+            var navigationParams = new NavigationParameters();
+            navigationParams.Add("NewsCategory", newsCategory);
+            await _navigationService.NavigateAsync("TechNewsPage",navigationParams);
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using DevAssesment.Admin.Views;
+﻿using Common.Resx;
+using DevAssesment.Admin.Views;
 using HelpersLibrary;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: MenuItem("Admin", nameof(AdminPage))]
+[assembly: MenuItem(nameof(AppResources.MenuNameAdmin), nameof(AdminPage))]
 namespace DevAssesment.Admin.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

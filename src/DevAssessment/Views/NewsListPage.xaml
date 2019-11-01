@@ -7,16 +7,16 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
              x:Class="DevAssessment.Views.NewsListPage"
-             Title="Latest News Sources">
+             Title="Latest News Sources"
+             Visual="Material">
 
   <Grid>
     <StackLayout>
 
-      <Switch x:Name="switchNews" 
+      <Switch 
               Margin ="0,10,0,0" 
-              IsToggled="{Binding IsToggled, Mode=TwoWay}" 
-              HorizontalOptions="CenterAndExpand"
-              OnColor="DodgerBlue"/>
+              IsToggled="{Binding IsToggled}" 
+              HorizontalOptions="CenterAndExpand"/>
 
       <ListView 
             ItemsSource="{Binding NewsItems}"
@@ -39,11 +39,11 @@
                    VerticalOptions="Center" 
                    Grid.Column="0"/>
 
-                <Switch IsToggled="{Binding Source={x:Reference switchNews} , Path=IsToggled}" 
+                <Switch IsToggled="{Binding ListToggleItem}" 
                     HorizontalOptions="CenterAndExpand" 
                     VerticalOptions="Center" 
                     Grid.Column="1"
-                    OnColor="DodgerBlue"    />
+                    />
 
               </Grid>
 

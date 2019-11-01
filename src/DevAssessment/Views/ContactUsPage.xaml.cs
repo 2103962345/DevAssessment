@@ -1,13 +1,7 @@
 ﻿
 using Common.Resx;
-using DevAssessment.Attributes;
+using HelpersLibrary;
 using DevAssessment.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

@@ -11,10 +11,13 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Essentials.Interfaces;
+using Common.Resx;
+using Prism.AppModel;
+using Prism.Navigation;
 
 namespace DevAssessment.ViewModel
 {
-    public class NewsListPageViewModel : BindableBase
+    public class NewsListPageViewModel : BindableBase, INavigatedAware
     {
 
         private readonly INewsService _newsService;
@@ -26,32 +29,7 @@ namespace DevAssessment.ViewModel
             _newsService = newsService;
             _dialogService = dialogService;
             _connectivity = connectivity;
-
-            _connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-
-            LoadNewsList();
-
         }
-
-        ~NewsListPageViewModel()
-        {
-            _connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
-        }
-
-
-        void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
-        {
-            if (e.NetworkAccess != NetworkAccess.Internet)
-                _dialogService.DisplayAlert("You don't have any internet connection.");
-            else
-            {
-                _dialogService.DisplayAlert("Internet connection is available now.");
-
-                LoadNewsList();
-            }
-        }
-
-
 
         private ObservableCollection<Source> _newsItems;
         public ObservableCollection<Source> NewsItems
@@ -66,7 +44,15 @@ namespace DevAssessment.ViewModel
         public bool IsToggled
         {
             get { return _isToggled; }
-            set { SetProperty(ref _isToggled, value); }
+            set
+            {
+                if (SetProperty(ref _isToggled, value))
+                {
+                    if (NewsItems.Count > 0)
+                        foreach (var item in NewsItems)
+                            item.ListToggleItem = value;
+                };
+            }
         }
 
 
@@ -76,6 +62,28 @@ namespace DevAssessment.ViewModel
             get { return _isBusy; }
             set { SetProperty(ref _isBusy, value); }
         }
+
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            _connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            _connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+            LoadNewsList();
+        }
+
+
+        void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            if (e.NetworkAccess != NetworkAccess.Internet)
+                _dialogService.DisplayAlert(AppResources.ConnectionInternetNotAvailable);
+            else
+                LoadNewsList();
+        }
+
 
 
         private async void LoadNewsList()
@@ -88,9 +96,9 @@ namespace DevAssessment.ViewModel
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        _dialogService.DisplayAlert("Please check your internet connection.");
+                        _dialogService.DisplayAlert(AppResources.ConnectionPleaseCheckInternet);
                     });
-                    
+
                     return;
                 }
 
@@ -108,6 +116,8 @@ namespace DevAssessment.ViewModel
             }
 
         }
+
+
     }
 }
 
