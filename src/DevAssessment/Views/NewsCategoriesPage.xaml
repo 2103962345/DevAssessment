@@ -13,16 +13,16 @@
 
     <Button Text="Technology News"
             Command="{Binding NavigateCommandClicked}"
-            CommandParameter="TechNewsPage" />
+            CommandParameter="technology" />
     <Button Text="Sports News" 
             Command="{Binding NavigateCommandClicked}" 
-            CommandParameter="SportsNewsPage"/>
+            CommandParameter="sports"/>
     <Button Text="Health News" 
             Command="{Binding NavigateCommandClicked}" 
-            CommandParameter="HealthNewsPage"/>
+            CommandParameter="health" />
     <Button Text="Science News" 
             Command="{Binding NavigateCommandClicked}"
-            CommandParameter="ScienceNewsPage" />
+            CommandParameter="science" />
 
   </StackLayout>
 </ContentPage>

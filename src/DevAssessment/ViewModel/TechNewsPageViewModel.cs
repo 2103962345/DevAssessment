@@ -11,15 +11,19 @@ using System.Text;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Essentials.Interfaces;
+using Prism.Navigation;
+using Prism.AppModel;
+using Common.Resx;
 
 namespace DevAssessment.ViewModel
 {
-    class TechNewsPageViewModel : BindableBase
+    class TechNewsPageViewModel : BindableBase , INavigatedAware
     {
 
         private readonly INewsService _newsService;
         private readonly IDialogService _dialogService;
         private readonly IConnectivity _connectivity;
+        private string newsCategory = "";
 
         public TechNewsPageViewModel(INewsService newsService, IDialogService dialogService, IConnectivity connectivity)
         {
@@ -27,18 +31,11 @@ namespace DevAssessment.ViewModel
             _dialogService = dialogService;
             _connectivity = connectivity;
 
-            _connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-
-            LoadNewsList();
-
             NavigationCommand = new DelegateCommand<Article>(OnNavigationCommandExecuted);
+            
         }
 
-        ~TechNewsPageViewModel()
-        {
-            _connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
-        }
-
+       
         public DelegateCommand<Article> NavigationCommand { get; }
 
 
@@ -57,24 +54,39 @@ namespace DevAssessment.ViewModel
             set { SetProperty(ref _isBusy, value); }
         }
 
-        private void OnNavigationCommandExecuted(Article article)
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
         {
-            if (!string.IsNullOrEmpty(article.url))
-                _dialogService.DisplayWebView(article.url);
-           
+            _connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            _connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+
+            if (parameters.ContainsKey("NewsCategory"))
+            {
+                newsCategory = parameters.GetValue<string>("NewsCategory");
+                LoadNewsList();
+            }
         }
 
         void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
             if (e.NetworkAccess != NetworkAccess.Internet)
-                _dialogService.DisplayAlert("You don't have any internet connection.");
+                _dialogService.DisplayAlert(AppResources.ConnectionInternetNotAvailable);
             else
-            {
-                _dialogService.DisplayAlert("Internet connection is available now.");
-
                 LoadNewsList();
-            }
+
         }
+
+        private void OnNavigationCommandExecuted(Article article)
+        {
+            if (!string.IsNullOrEmpty(article.url))
+                _dialogService.DisplayWebView(article.url);
+
+        }
+
 
         private async void LoadNewsList()
         {
@@ -86,13 +98,13 @@ namespace DevAssessment.ViewModel
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        _dialogService.DisplayAlert("Please check your internet connection.");
+                        _dialogService.DisplayAlert(AppResources.ConnectionPleaseCheckInternet);
                     });
 
                     return;
                 }
 
-                TopHeadlines latestNews = await _newsService.GetTopNewsByCategory("us", "technology", "f7cb4296dd7b4311b6c5e099345c71ab");
+                TopHeadlines latestNews = await _newsService.GetTopNewsByCategory("us", newsCategory, "f7cb4296dd7b4311b6c5e099345c71ab");
                 TechnologyNews = new ObservableCollection<Article>(latestNews.articles);
 
             }
@@ -106,5 +118,8 @@ namespace DevAssessment.ViewModel
             }
 
         }
+
+
+      
     }
 }

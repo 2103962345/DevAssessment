@@ -57,9 +57,7 @@ namespace DevAssessment
             containerRegistry.RegisterForNavigation<NewsListPage, NewsListPageViewModel>();
             containerRegistry.RegisterForNavigation<NewsCategoriesPage, NewsCategoriesViewModel>();
             containerRegistry.RegisterForNavigation<TechNewsPage, TechNewsPageViewModel>();
-            containerRegistry.RegisterForNavigation<SportsNewsPage, SportsNewsPageViewModel>();
-            containerRegistry.RegisterForNavigation<ScienceNewsPage , ScienceNewsPageViewModel>();
-            containerRegistry.RegisterForNavigation<HealthNewsPage,HealthNewsPageViewModel>();
+          
 
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
             containerRegistry.RegisterDialog<LogDialog, LogDialogViewModel>();

@@ -1,5 +1,5 @@
 ﻿using Common.Resx;
-using DevAssessment.Attributes;
+using HelpersLibrary;
 using DevAssessment.Views;
 using System.Reflection;
 using Xamarin.Forms;

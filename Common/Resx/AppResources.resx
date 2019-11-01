@@ -167,6 +167,12 @@
     <value>Speak</value>
     <comment>showing text "Speak" on button</comment>
   </data>
+  <data name="ConnectionInternetNotAvailable" xml:space="preserve">
+    <value>You don't have any internet connection.</value>
+  </data>
+  <data name="ConnectionPleaseCheckInternet" xml:space="preserve">
+    <value>Please check your internet connection.</value>
+  </data>
   <data name="CustomAlertDialogMessage" xml:space="preserve">
     <value>This is a custom user dialog</value>
     <comment>showing  a message to the user on custom dialog</comment>
@@ -210,6 +216,10 @@
   <data name="MenuNameAboutUs" xml:space="preserve">
     <value>About Us</value>
     <comment>showing About Us menu text</comment>
+  </data>
+  <data name="MenuNameAdmin" xml:space="preserve">
+    <value>Admin</value>
+    <comment>admin page menu item name</comment>
   </data>
   <data name="MenuNameContactUs" xml:space="preserve">
     <value>Contact Us</value>

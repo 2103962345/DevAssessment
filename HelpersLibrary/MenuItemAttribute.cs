@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Resx;
+using System;
 
 namespace HelpersLibrary
 {
@@ -7,7 +8,7 @@ namespace HelpersLibrary
     {
         public MenuItemAttribute(string displayName, string navigationName)
         {
-            DisplayName = displayName;
+            DisplayName = AppResources.ResourceManager.GetString(displayName, AppResources.Culture);
             NavigationName = navigationName;
 
         }
